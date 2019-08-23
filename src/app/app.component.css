@@ -1,0 +1,10 @@
+app-home-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+app-tap-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
