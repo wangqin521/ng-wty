@@ -1,0 +1,10 @@
+{
+  "/ws": {
+    "target": "https://wei-test.vipxiaoqu.com/wty-test/",
+    "secure":false,
+    "changeOrigin":true,
+    "pathRewrite":{
+      "^/ws": ""
+    }
+  }
+}
