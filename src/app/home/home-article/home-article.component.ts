@@ -9,15 +9,23 @@ import { HomeService } from '../../service/home.service';
   styleUrls: ['./home-article.component.css']
 })
 export class HomeArticleComponent implements OnInit {
-  data;
+  data: any;
+  headAdvert: any;
+  homePage: any;
+  homePageTemplateInfo: any;
   communityId: any = 4;
   constructor(
     private homeService: HomeService,
   ) { }
   ngOnInit() {
-    this.homeService.getBillTypes(this.communityId).subscribe(function(res) {
-      this.data = res;
-      console.log(this.data);
-  });
+    console.log(2);
+    this.data = this.getHomeData();
+    console.log(this.data);
+  }
+  getHomeData(): void {
+    this.homeService.getHomeData(this.communityId).subscribe(function(res: any) {
+      console.log(res);
+      return this.data = res.data;
+    });
   }
 }

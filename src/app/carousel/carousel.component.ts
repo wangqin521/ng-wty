@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, SimpleChanges, OnChanges} from '@angular/core';
 import Swiper from 'swiper';
 
 @Component({
@@ -6,10 +6,15 @@ import Swiper from 'swiper';
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css']
 })
-export class CarouselComponent implements OnInit {
-  swiper: Swiper;
+export class CarouselComponent implements OnChanges {
   constructor() {}
-  ngOnInit() {
+  swiper: Swiper;
+  @Input() carousels;
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(3);
+    this.getCarousels((data) => {
+      console.log(data);
+    });
     this.swiper = new Swiper ('.swiper-container', {
       direction: 'horizontal', // 垂直切换选项
       loop: true, // 循环模式选项
@@ -21,4 +26,9 @@ export class CarouselComponent implements OnInit {
     });
   }
 
+  getCarousels(back) {
+    setTimeout(() => {
+      back(this.carousels);
+    }, 500);
+  }
 }

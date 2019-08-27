@@ -1,6 +1,6 @@
 {
   "/ws": {
-    "target": "https://wei-test.vipxiaoqu.com/wty-test/",
+    "target": "https://wei-test.vipxiaoqu.com/wty-test/ws",
     "secure":false,
     "changeOrigin":true,
     "pathRewrite":{
