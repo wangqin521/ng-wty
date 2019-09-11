@@ -9,23 +9,27 @@ import { HomeService } from '../../service/home.service';
   styleUrls: ['./home-article.component.css']
 })
 export class HomeArticleComponent implements OnInit {
-  data: any;
-  headAdvert: any;
-  homePage: any;
-  homePageTemplateInfo: any;
-  communityId: any = 4;
+  data: {
+    headAdvert: any,
+    homePage: any,
+    homePageTemplateInfo: any
+  };
+  communityId: any = 3;
+
   constructor(
     private homeService: HomeService,
   ) { }
   ngOnInit() {
-    console.log(2);
-    this.data = this.getHomeData();
-    console.log(this.data);
+    this.getHomeData();
   }
   getHomeData(): void {
-    this.homeService.getHomeData(this.communityId).subscribe(function(res: any) {
-      console.log(res);
-      return this.data = res.data;
+    // tslint:disable-next-line: prefer-const
+    let that = this;
+    that.homeService.getHomeData(that.communityId)
+    // tslint:disable-next-line: only-arrow-functions
+    .subscribe(function(res: any) {
+      that.data = res.data;
+      return that.data;
     });
   }
 }

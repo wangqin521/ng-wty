@@ -1,0 +1,19 @@
+div {
+    width: 100vw;
+    height: 15vw;
+    line-height: 15vw;
+    background: #FFF;
+    text-align: center;
+    font-size: 4.5vw;
+    border-bottom: 1px solid #dadada;
+}
+i{
+    display: block;
+    width: 2.5vw;
+    height: 4vw;
+    background: url(../../assets/img/black.png) no-repeat;
+    background-size: contain;
+    float: left;
+    margin-left: 5vw;
+    margin-top: 5vw;
+}

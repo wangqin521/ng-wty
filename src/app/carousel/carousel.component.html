@@ -1,8 +1,12 @@
-<!-- <div class="swiper-container">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide" *ngFor="let carousel of carousels"><img [src]="carousel.url" alt=""></div>
-    </div> -->
-    <!-- 如果需要分页器 -->
-    <!-- <div class="swiper-pagination"></div>
-</div> -->
-<div>数据：{{carousels}}</div>
+<div class="swiper-container">
+    <div class="swiper-wrapper" *ngIf="lists">
+        <div class="swiper-slide" *ngFor="let list of lists"><img [src]="list.url" alt=""></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <!-- <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+    </div>
+    <div class="swiper-pagination"></div> -->
+</div>

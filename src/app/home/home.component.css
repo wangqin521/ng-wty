@@ -2,6 +2,7 @@ app-home-header {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 2;
 }
 app-tap-bar {
     position: absolute;
