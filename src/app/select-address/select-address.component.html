@@ -1,6 +1,7 @@
-<app-child-head [title]="title"></app-child-head>
+<app-child-head title="收货地址管理"></app-child-head>
 <div class="searchAddress">
-    <input type="search" placeholder="请输入您的收货地址">
-    <span>取消</span>
+    <input type="search" placeholder="请输入您的收货地址" #searchBox (input)="search(searchBox)" (focus)="onFocus(searchBox)" [class.width_85]="isShorten">
+    <span [class.none]="isHide" (click)="getCancel()">取消</span>
 </div>
+<div id="container"></div> 
 
